@@ -1,40 +1,38 @@
 <!DOCTYPE html>
-<html>
-    <center/center>
+<html lang="en">
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Eli</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <meta charset="UTF-8">
+    <title>Quieres ser mi novia</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
-        function accionParaCuandoEllaDigaQueSi(){
-            alert('jaja ala pasara el resto de tu vida contigo <3');
-            alert("sabia que dirias que SI")
-        }
-
-        function mueveElBoton(){
-            width = window.innerWidth;
-            height = window.innerHeight;
-
-            newWidth = (Math.random() * width);
-            newHeight = (Math.random() * height);
-
-            document.getElementById('btnNo').style.position = "absolute";
-            document.getElementById('btnNo').style.left = newWidth + "px";
-            document.getElementById('btnNo').style.top = newHeight + "px";
-
-
-        }
+        $(document).ready(function(){
+            $('.p1').hover(function(){
+                arriba = Math.random()*(400-1) +1;
+                abajo = Math.random() * (609-1) +1;
+              $(this).css('top', arriba);
+              $(this).css('left', abajo);
+            });
+        });
+    function dijoSi(){
+        document.getElementById('si').style.display = 'block';
+    }
     </script>
 </head>
 <body>
-    <body background="img/estr.jfif">
-    
-   <p style="color:white" <h2>elige una opcion</h2></p>
-    <p style="color:white" <h3>ya dejaras tu orgullo?</h3> </p>
-    <input type="button" onclick="accionParaCuandoEllaDigaQueSi()" id="btnSi" value="Si"/>
-    <input type="button" id="btnNo" onmouseover="mueveElBoton()" value="No" />
-    <audio autoplay loop src="aud/y2mate.com - Daniel Quién  Aroma A Nostalgia Lyric EspañolInglés.mp3"></audio>
-
+    <div class="contenedor">
+        <div class="titulo">
+            <h1>¿Quieres ser mi novia?</h1>
+        </div>
+        <div class="opciones">
+            <p class="p1">No</p>
+            <p onclick="dijoSi()" class="p2">Si</p>
+            <div id="si">
+                <h2>Gracias bb, lo sabía. Feliz primer día de novios :3</h2>
+            </div>
+        </div>
+    </div>
 </body>
-</html> 
+</html>
+
